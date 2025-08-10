@@ -1,3 +1,8 @@
- # The following line is commented out as it is not present in the file
- # packages/
+# The following line is commented out as it is not present in the file
+# packages/
+
+node_modules/
+backend/node_modules/
+data/*.db
+data/backups/*.db
 
