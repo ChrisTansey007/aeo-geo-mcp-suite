@@ -1,0 +1,71 @@
+import { Button, Input, Badge, Chip, Card, CardHeader, CardTitle, CardContent, Tabs, TabsList, TabsTrigger, TabsContent, TooltipProvider, Tooltip, TooltipTrigger, TooltipContent, Drawer, DrawerTrigger, DrawerContent, DataTable, JSONViewer, ToastProvider, Toast, ToastViewport, ToastTitle, ToastDescription, ToastAction, Skeleton } from "./index"
+
+# Component Examples
+
+## Button
+<Button>Click me</Button>
+
+## Input
+<Input placeholder="Type here" />
+
+## Badge
+<Badge>Badge</Badge>
+
+## Chip
+<Chip>Chip</Chip>
+
+## Card
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+  </CardHeader>
+  <CardContent>
+    Content
+  </CardContent>
+</Card>
+
+## Tabs
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Content 1</TabsContent>
+  <TabsContent value="tab2">Content 2</TabsContent>
+</Tabs>
+
+## Tooltip
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button>Hover</Button>
+    </TooltipTrigger>
+    <TooltipContent>Tooltip text</TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+
+## Drawer
+<Drawer>
+  <DrawerTrigger asChild><Button>Open Drawer</Button></DrawerTrigger>
+  <DrawerContent>Drawer Content</DrawerContent>
+</Drawer>
+
+## DataTable
+<DataTable columns={[{ key: 'name', header: 'Name' }]} data={[{ name: 'Alice' }]} />
+
+## JSONViewer
+<JSONViewer data={{ hello: 'world' }} />
+
+## Toast
+<ToastProvider>
+  <Toast>
+    <ToastTitle>Hi</ToastTitle>
+    <ToastDescription>Hello</ToastDescription>
+    <ToastAction altText="Close">Close</ToastAction>
+  </Toast>
+  <ToastViewport />
+</ToastProvider>
+
+## Skeleton
+<Skeleton className="h-4 w-[250px]" />
+
