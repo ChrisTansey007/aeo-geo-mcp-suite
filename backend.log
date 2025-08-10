@@ -1,0 +1,14 @@
+2025-08-10 16:36:32,321 INFO Starting server "SEO Astro Analyzer \U0001f680"...
+2025-08-10 16:41:25,410 INFO Starting server "SEO Astro Analyzer \U0001f680"...
+2025-08-10 16:47:43,191 INFO === Backend server starting with deep logging ===
+2025-08-10 16:47:43,193 DEBUG Initializing server 'SEO Astro Analyzer 🚀'
+2025-08-10 16:47:43,193 DEBUG Registering handler for ListToolsRequest
+2025-08-10 16:47:43,193 DEBUG Registering handler for CallToolRequest
+2025-08-10 16:47:43,194 DEBUG Registering handler for ListResourcesRequest
+2025-08-10 16:47:43,194 DEBUG Registering handler for ReadResourceRequest
+2025-08-10 16:47:43,194 DEBUG Registering handler for PromptListRequest
+2025-08-10 16:47:43,194 DEBUG Registering handler for GetPromptRequest
+2025-08-10 16:47:43,203 DEBUG Registering handler for ListResourceTemplatesRequest
+2025-08-10 16:47:43,216 INFO Server main entrypoint starting...
+2025-08-10 16:47:43,216 INFO Starting server "SEO Astro Analyzer 🚀"...
+2025-08-10 16:47:43,224 DEBUG Using proactor: IocpProactor

@@ -1,0 +1,4 @@
+# Backend Python dependencies
+fastmcp
+beautifulsoup4
+requests
