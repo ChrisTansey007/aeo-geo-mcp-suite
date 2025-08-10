@@ -4,16 +4,19 @@ import type { Run, ToolResult } from '../shared/types';
 
 interface RunStoreState {
   currentRun?: Run;
+  runs: Run[];
   analyzing: boolean;
   router?: { tools: string[]; rationale: string };
   error?: string;
   setError: (e?: string) => void;
   doRoute: (url: string, engines?: string[]) => Promise<void>;
   doAnalyze: (url: string, tools: string[], engines?: string[]) => Promise<void>;
+  loadRuns: () => Promise<void>;
 }
 
 export const useRunStore = create<RunStoreState>((set) => ({
   analyzing: false,
+  runs: [],
   setError: (e?: string) => set({ error: e }),
   doRoute: async (url: string, engines?: string[]) => {
     const r = await api.route(url, engines);
@@ -37,5 +40,9 @@ export const useRunStore = create<RunStoreState>((set) => ({
     } finally {
       set({ analyzing: false });
     }
+  },
+  loadRuns: async () => {
+    const r = await api.runs();
+    set({ runs: (r as any).runs });
   }
 }));

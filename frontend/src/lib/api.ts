@@ -62,3 +62,63 @@ export async function runDetail(id: string) {
   }
   return res.json() as Promise<{ run: Run }>;
 }
+
+export async function createRunApi() {
+  const res = await fetch(`${BASE}/api/runs`, { method: 'POST' });
+  if (!res.ok) throw new Error('create run failed');
+  return res.json();
+}
+
+export async function runCards(id: number) {
+  const res = await fetch(`${BASE}/api/runs/${id}/cards`);
+  if (!res.ok) throw new Error('cards failed');
+  return res.json();
+}
+
+export async function upsertCardApi(runId: number, type: string, data: any) {
+  const res = await fetch(`${BASE}/api/runs/${runId}/cards`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type, data })
+  });
+  if (!res.ok) throw new Error('card failed');
+  return res.json();
+}
+
+export async function addEvidenceApi(cardId: number, raw: string) {
+  const res = await fetch(`${BASE}/api/cards/${cardId}/evidence`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ raw })
+  });
+  if (!res.ok) throw new Error('evidence failed');
+  return res.json();
+}
+
+export async function createThreadApi(runId: number, title: string) {
+  const res = await fetch(`${BASE}/api/chat/threads`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ runId, title })
+  });
+  if (!res.ok) throw new Error('thread failed');
+  return res.json();
+}
+
+export async function addMessageApi(threadId: number, role: string, content: string) {
+  const res = await fetch(`${BASE}/api/chat/${threadId}/messages`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ role, content })
+  });
+  if (!res.ok) throw new Error('message failed');
+  return res.json();
+}
+
+export async function exportRunApi(id: number) {
+  const res = await fetch(`${BASE}/api/export/${id}`);
+  if (!res.ok) throw new Error('export failed');
+  return res.blob();
+}
+
+export async function importDataApi(file: File) {
+  const res = await fetch(`${BASE}/api/import`, { method: 'POST', body: file });
+  if (!res.ok) throw new Error('import failed');
+  return res.json();
+}
