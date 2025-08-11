@@ -3,7 +3,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/tabs';
 import { DataTable, type Column } from '../components/data-table';
 import { JSONViewer } from '../components/json-viewer';
 import { Badge } from '../components/badge';
-import { useLogsQuery, useLogsStream, LogsStreamState, downloadLogs } from '../hooks/useLogs';
+import { useLogsQuery, useLogsStream, downloadLogs } from '../hooks/useLogs';
+import type { LogsStreamState } from '../shared/logTypes';
 
 interface LogEntry {
   id: string;
@@ -201,4 +202,3 @@ export default function LogsPanel() {
     </Tabs>
   );
 }
-
