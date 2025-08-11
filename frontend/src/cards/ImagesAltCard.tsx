@@ -20,7 +20,7 @@ export default function ImagesAltCard({ res }: { res: ToolResult }) {
         {Array.isArray(metrics.images) && metrics.images.length > 0 ? (
           metrics.images.map(
             (img: { src: string; alt: string }, i: number) => (
-              <li key={i}>
+              <li key={`${img.src}-${img.alt}-${i}`}>
                 <span className="font-semibold">src:</span> {img.src}{' '}
                 <span className="font-semibold">alt:</span> {img.alt}
               </li>
@@ -33,7 +33,7 @@ export default function ImagesAltCard({ res }: { res: ToolResult }) {
       <ul className="list-disc pl-5 mt-2 text-sm">
         {details.length > 0 ? (
           details.map((d, i) => (
-            <li key={i}>
+            <li key={`${d.type}-${d.message}-${d.selector || ''}-${i}`}>
               {d.type ? d.type.toUpperCase() : 'INFO'}: {d.message || ''}
             </li>
           ))

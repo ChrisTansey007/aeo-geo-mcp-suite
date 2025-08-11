@@ -19,7 +19,7 @@ export default function LinksCard({ res }: { res: ToolResult }) {
       <ul className="mt-2 text-sm">
         {Array.isArray(metrics.links) && metrics.links.length > 0 ? (
           metrics.links.map((link: string, i: number) => (
-            <li key={i}>{link}</li>
+            <li key={`${link}-${i}`}>{link}</li>
           ))
         ) : (
           <li>No links found.</li>
@@ -28,7 +28,7 @@ export default function LinksCard({ res }: { res: ToolResult }) {
       <ul className="list-disc pl-5 mt-2 text-sm">
         {details.length > 0 ? (
           details.map((d, i) => (
-            <li key={i}>
+            <li key={`${d.type}-${d.message}-${d.selector || ''}-${i}`}>
               {d.type ? d.type.toUpperCase() : 'INFO'}: {d.message || ''}
             </li>
           ))

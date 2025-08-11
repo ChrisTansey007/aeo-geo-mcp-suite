@@ -15,7 +15,7 @@ export default function FixDrawer({
         <h3 className="text-lg font-medium">Fixes</h3>
         <ul className="list-disc pl-5 text-sm">
           {details.map((d, i) => (
-            <li key={i}>{d.message}</li>
+            <li key={`${d.type}-${d.message}-${d.selector || ''}-${i}`}>{d.message}</li>
           ))}
         </ul>
       </DrawerContent>

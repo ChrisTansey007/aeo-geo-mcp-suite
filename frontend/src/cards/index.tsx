@@ -53,7 +53,7 @@ export const DefaultCard: CardComponent = ({ res }) => {
       <ul className="list-disc pl-5 mt-2 text-sm">
         {details.length > 0 ? (
           details.map((d, i) => (
-            <li key={i}>
+            <li key={`${d.type}-${d.message}-${d.selector || ''}-${i}`}>
               {d.type ? d.type.toUpperCase() : 'INFO'}: {d.message || ''}
             </li>
           ))

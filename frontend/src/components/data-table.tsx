@@ -11,9 +11,10 @@ export interface DataTableProps<T> {
   columns: Column<T>[]
   data: T[]
   className?: string
+  getRowKey?: (row: T, index: number) => string
 }
 
-export function DataTable<T>({ columns, data, className }: DataTableProps<T>) {
+export function DataTable<T>({ columns, data, className, getRowKey }: DataTableProps<T>) {
   return (
     <div className={cn("overflow-auto", className)}>
       <table className="w-full caption-bottom text-sm" role="table">
@@ -27,18 +28,26 @@ export function DataTable<T>({ columns, data, className }: DataTableProps<T>) {
           </tr>
         </thead>
         <tbody>
-          {data.map((row, i) => (
-            <tr
-              key={i}
-              className="border-b last:border-none hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
-            >
-              {columns.map((col) => (
-                <td key={String(col.key)} className="p-2" role="cell">
-                  {col.render ? col.render(row) : String(row[col.key])}
-                </td>
-              ))}
-            </tr>
-          ))}
+          {data.map((row, i) => {
+            // Generate a key for the row
+            // Use the provided getRowKey function if available, otherwise create a composite key
+            const rowKey = getRowKey 
+              ? getRowKey(row, i) 
+              : `${JSON.stringify(row)}-${i}`;
+              
+            return (
+              <tr
+                key={rowKey}
+                className="border-b last:border-none hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
+              >
+                {columns.map((col) => (
+                  <td key={String(col.key)} className="p-2" role="cell">
+                    {col.render ? col.render(row) : String(row[col.key])}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
