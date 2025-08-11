@@ -1,4 +1,5 @@
 // src/cards/index.tsx
+/* eslint-disable react-refresh/only-export-components */
 import type { ToolResult } from '../shared/types';
 import React from 'react';
 
@@ -9,11 +10,13 @@ import TitleMetaCard from './TitleMetaCard';
 import HeadingsCard from './HeadingsCard';
 import ImagesAltCard from './ImagesAltCard';
 import LinksCard from './LinksCard';
+import IndexabilityCard from './IndexabilityCard';
 const registry: Record<string, CardComponent> = {
   title_meta: TitleMetaCard,
   headings: HeadingsCard,
   images_alt: ImagesAltCard,
   links: LinksCard,
+  indexability: IndexabilityCard,
 };
 
 export function register(kind: string, Component: CardComponent) {

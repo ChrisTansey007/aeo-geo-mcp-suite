@@ -1,4 +1,6 @@
 import type { ToolResult } from '../shared/types';
+import EvidencePanel from '../panels/EvidencePanel';
+import FixDrawer from '../drawers/FixDrawer';
 
 export default function LinksCard({ res }: { res: ToolResult }) {
   return (
@@ -17,8 +19,16 @@ export default function LinksCard({ res }: { res: ToolResult }) {
         )}
       </ul>
       <ul className="list-disc pl-5 mt-2 text-sm">
-        {res.details.map((d,i)=>(<li key={i}>{d.type.toUpperCase()}: {d.message}</li>))}
+        {res.details.map((d, i) => (
+          <li key={i}>
+            {d.type.toUpperCase()}: {d.message}
+          </li>
+        ))}
       </ul>
+      <EvidencePanel evidence={res.evidence} />
+      <FixDrawer details={res.details}>
+        <button className="mt-2 text-sm text-indigo-600">View fixes</button>
+      </FixDrawer>
     </section>
   );
 }
