@@ -14,7 +14,9 @@ function logFrontend(message: string) {
     }
     // For dev: try to append to frontend.log (only works in Node, not browser)
     // (This is a placeholder; real file writing would need backend support)
-  } catch {}
+  } catch {
+    // ignore logging errors
+  }
 }
 
 export async function route(url: string, engines?: string[]) {
@@ -75,7 +77,7 @@ export async function runCards(id: number) {
   return res.json();
 }
 
-export async function upsertCardApi(runId: number, type: string, data: any) {
+export async function upsertCardApi(runId: number, type: string, data: unknown) {
   const res = await fetch(`${BASE}/api/runs/${runId}/cards`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ type, data })

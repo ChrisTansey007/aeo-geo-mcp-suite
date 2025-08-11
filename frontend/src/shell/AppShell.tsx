@@ -1,24 +1,38 @@
 import { Outlet, Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { useRunStore } from '../store/runStore';
-
+import { useEffect, useState } from 'react';
+import { useAnalyze } from '../store/useRunStore';
 
 export default function AppShell() {
   const nav = useNavigate();
   const [url, setUrl] = useState('https://example.com');
-  const doAnalyze = useRunStore(s => s.doAnalyze);
-  const analyzing = useRunStore(s => s.analyzing);
-  const error = useRunStore(s => s.error);
+  const tools = [
+    'title_meta',
+    'robots_canonical',
+    'headings',
+    'images_alt',
+    'links',
+    'structured_data',
+    'open_graph_twitter',
+    'wordcount_keywords',
+    'favicon_apple',
+    'lang_charset',
+    'sitemap_robots',
+  ];
+  const analyze = useAnalyze(tools);
 
-  async function onRun() {
-    // For now, run all tools; you can customize this list
-    const tools = [
-      'title_meta', 'robots_canonical', 'headings', 'images_alt', 'links',
-      'structured_data', 'open_graph_twitter', 'wordcount_keywords',
-      'favicon_apple', 'lang_charset', 'sitemap_robots'
-    ];
-    await doAnalyze(url, tools);
-    nav('/runs/latest');
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      alert(detail.title);
+    };
+    window.addEventListener('toast', handler);
+    return () => window.removeEventListener('toast', handler);
+  }, []);
+
+  function onRun() {
+    analyze.mutate(url, {
+      onSuccess: () => nav('/runs/latest'),
+    });
   }
 
   return (
@@ -32,13 +46,29 @@ export default function AppShell() {
         </nav>
       </aside>
       <header className="flex items-center gap-2 px-4 border-b border-neutral-800">
-        <input aria-label="URL" value={url} onChange={e=>setUrl(e.target.value)}
-          className="flex-1 bg-neutral-900 rounded px-3 py-2 outline-none border border-neutral-800" placeholder="https://…" />
-        <button onClick={onRun} disabled={analyzing}
-          className="px-3 py-2 rounded bg-indigo-600 disabled:opacity-50">{analyzing ? 'Running…' : 'Run'}</button>
+        <input
+          aria-label="URL"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          className="flex-1 rounded border border-neutral-800 bg-neutral-900 px-3 py-2 outline-none"
+          placeholder="https://…"
+        />
+        <button
+          onClick={onRun}
+          disabled={analyze.isPending}
+          className="rounded bg-indigo-600 px-3 py-2 disabled:opacity-50"
+        >
+          {analyze.isPending ? 'Running…' : 'Run'}
+        </button>
       </header>
-      {error && <div className="text-red-500 px-4 py-2">{error}</div>}
-      <main className="p-4"><Outlet/></main>
+      {analyze.error ? (
+        <div className="px-4 py-2 text-red-500">
+          {(analyze.error as Error).message}
+        </div>
+      ) : null}
+      <main className="p-4">
+        <Outlet />
+      </main>
     </div>
   );
 }
