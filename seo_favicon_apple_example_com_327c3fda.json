@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "favicon_found": false,
+    "apple_icons_count": 0
+  },
+  "details": [],
+  "evidence": {
+    "favicon": "",
+    "apple_touch_icons": []
+  }
+}

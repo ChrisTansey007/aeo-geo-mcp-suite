@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "robots_count": 1,
+    "has_canonical": true
+  },
+  "details": [],
+  "evidence": {
+    "robots": [
+      "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    ],
+    "canonical": "https://portcityfenceofwilmington.com/"
+  }
+}

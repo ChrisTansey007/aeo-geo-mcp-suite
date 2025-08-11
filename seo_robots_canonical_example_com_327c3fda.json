@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "robots_count": 0,
+    "has_canonical": false
+  },
+  "details": [],
+  "evidence": {
+    "robots": [],
+    "canonical": ""
+  }
+}

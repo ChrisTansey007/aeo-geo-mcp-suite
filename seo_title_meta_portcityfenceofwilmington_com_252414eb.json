@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "title_length": 27,
+    "meta_count": 20
+  },
+  "details": [],
+  "evidence": {
+    "title": "Fence Company Wilmington NC",
+    "meta": {
+      "": "",
+      "viewport": "width=device-width, initial-scale=1.0",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "description": "Family-owned fence company serving Wilmington, NC. Wood, vinyl & aluminum installs—free on-site estimates. Call today!",
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:title": "Fence Company Wilmington NC",
+      "og:description": "Family-owned fence company serving Wilmington, NC. Wood, vinyl & aluminum installs—free on-site estimates. Call today!",
+      "og:url": "https://portcityfenceofwilmington.com/",
+      "og:site_name": "Fence Company Wilmington NC | Family Owned | Port City Fence",
+      "article:publisher": "https://www.facebook.com/profile.php?id=61569862002628&sk=about",
+      "article:modified_time": "2025-07-07T15:35:47+00:00",
+      "og:image": "https://portcityfenceofwilmington.com/wp-content/uploads/2024/02/cropped-port-city-fence-logo.webp",
+      "og:image:width": "512",
+      "og:image:height": "512",
+      "og:image:type": "image/webp",
+      "twitter:card": "summary_large_image",
+      "generator": "Elementor 3.31.2; features: e_font_icon_svg, additional_custom_breakpoints, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-swap",
+      "msapplication-TileImage": "https://i0.wp.com/portcityfenceofwilmington.com/wp-content/uploads/2024/02/port-city-fence-logo.webp?fit=270%2C134&ssl=1",
+      "bilmur:data": ""
+    }
+  }
+}

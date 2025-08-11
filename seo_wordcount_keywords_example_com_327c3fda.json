@@ -1,0 +1,56 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "wordcount": 30,
+    "keywords_count": 10
+  },
+  "details": [],
+  "evidence": {
+    "wordcount": 30,
+    "keywords": [
+      [
+        "domain",
+        4
+      ],
+      [
+        "in",
+        3
+      ],
+      [
+        "example",
+        2
+      ],
+      [
+        "this",
+        2
+      ],
+      [
+        "for",
+        2
+      ],
+      [
+        "use",
+        2
+      ],
+      [
+        "is",
+        1
+      ],
+      [
+        "illustrative",
+        1
+      ],
+      [
+        "examples",
+        1
+      ],
+      [
+        "documents",
+        1
+      ]
+    ]
+  }
+}

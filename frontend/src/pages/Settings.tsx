@@ -48,8 +48,18 @@ export default function Settings() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    const { name, value, type, checked } = e.target;
-    setPrefs((p) => ({ ...p, [name]: type === 'checkbox' ? checked : value }));
+    const { name, value, type } = e.target;
+    if (type === 'checkbox') {
+      setPrefs((p) => ({
+        ...p,
+        [name]: (e.target as HTMLInputElement).checked,
+      }));
+    } else {
+      setPrefs((p) => ({
+        ...p,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {

@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "has_sitemap": true,
+    "has_robots": true
+  },
+  "details": [],
+  "evidence": {
+    "sitemap": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!--generator='jetpack-14.9.1'-->\n<!--Jetpack_Sitemap_Buffer_Master-->\n<?xml-stylesheet type=\"text/xsl\" href=\"//portcityfenceofwilmington.com/sitemap-index.xsl\"?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <sitemap>\n    <loc>https://portcityfenceofwilmington.com/sitemap-1.xml</loc>\n    <lastmod>2025-08-08T04:54:38Z</lastmod>\n  </sitemap>\n  <sitemap>\n    <loc>https://portcityfenceofwilmington.com/image-sitemap-1.xml</loc>\n    <lastmod>2025-07-07T15:13:25Z</lastmod>\n  </sitemap>\n  <sitemap>\n    <loc>https://portcityfenceofwilmington.com/video-sitemap-1.xml</loc>\n    <lastmod>2025-01-28T16:39:48Z</lastmod>\n  </sitemap>\n</sitemapindex>\n",
+    "robots": "Sitemap: https://portcityfenceofwilmington.com/sitemap.xml\nSitemap: https://portcityfenceofwilmington.com/news-sitemap.xml\n# START YOAST BLOCK\n# ---------------------------\nUser-agent: *\nDisallow:\n\nSitemap: https://portcityfenceofwilmington.com/sitemap_index.xml\n# ---------------------------\n# END YOAST BLOCK"
+  }
+}

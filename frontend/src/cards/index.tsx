@@ -27,17 +27,40 @@ export function getCard(kind: string): CardComponent {
   return registry[kind] || DefaultCard;
 }
 
-export const DefaultCard: CardComponent = ({ res }) => (
-  <div className="border border-neutral-800 rounded p-3">
-    <h3 className="font-medium">{res.tool}</h3>
-    <div className="text-sm">Score: {res.summary.score} ({res.summary.grade})</div>
-    <dl className="grid grid-cols-2 gap-2 mt-2 text-sm">
-      {Object.entries(res.metrics).map(([k,v]) => (
-        <div key={k} className="flex justify-between"><dt className="text-neutral-400">{k}</dt><dd>{String(v)}</dd></div>
-      ))}
-    </dl>
-    <ul className="list-disc pl-5 mt-2 text-sm">
-      {res.details.map((d,i)=>(<li key={i}>{d.type.toUpperCase()}: {d.message}</li>))}
-    </ul>
-  </div>
-);
+export const DefaultCard: CardComponent = ({ res }) => {
+  const summary = res?.summary || {};
+  const metrics = res?.metrics || {};
+  const details = Array.isArray(res?.details) ? res.details : [];
+
+  return (
+    <div className="border border-neutral-800 rounded p-3">
+      <h3 className="font-medium">{res.tool}</h3>
+      <div className="text-sm">
+        Score: {summary.score !== undefined ? summary.score : 'N/A'} ({summary.grade || 'N/A'})
+      </div>
+      <dl className="grid grid-cols-2 gap-2 mt-2 text-sm">
+        {metrics && Object.entries(metrics).length > 0 ? (
+          Object.entries(metrics).map(([k, v]) => (
+            <div key={k} className="flex justify-between">
+              <dt className="text-neutral-400">{k}</dt>
+              <dd>{String(v)}</dd>
+            </div>
+          ))
+        ) : (
+          <div className="col-span-2 text-neutral-400">No metrics available</div>
+        )}
+      </dl>
+      <ul className="list-disc pl-5 mt-2 text-sm">
+        {details.length > 0 ? (
+          details.map((d, i) => (
+            <li key={i}>
+              {d.type ? d.type.toUpperCase() : 'INFO'}: {d.message || ''}
+            </li>
+          ))
+        ) : (
+          <li className="text-neutral-400">No details available</li>
+        )}
+      </ul>
+    </div>
+  );
+};

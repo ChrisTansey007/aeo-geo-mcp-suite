@@ -12,9 +12,10 @@ export default function RunDetail() {
         <p className="text-sm text-neutral-400">Tools: {r.tools.join(', ')}</p>
       </header>
       <div className="grid gap-4 md:grid-cols-2">
-        {r.results.map((res) => {
+        {r.results.map((res, i) => {
           const Card = getCard(res.tool);
-          return <Card key={res.tool} res={res} />;
+          // Use a unique key: tool name + run id + index
+          return <Card key={`${res.tool}_${r.id}_${i}`} res={res} />;
         })}
       </div>
     </div>

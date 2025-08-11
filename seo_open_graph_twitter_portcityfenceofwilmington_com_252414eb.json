@@ -1,0 +1,28 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "og_count": 10,
+    "twitter_count": 1
+  },
+  "details": [],
+  "evidence": {
+    "open_graph": {
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:title": "Fence Company Wilmington NC",
+      "og:description": "Family-owned fence company serving Wilmington, NC. Wood, vinyl & aluminum installs—free on-site estimates. Call today!",
+      "og:url": "https://portcityfenceofwilmington.com/",
+      "og:site_name": "Fence Company Wilmington NC | Family Owned | Port City Fence",
+      "og:image": "https://portcityfenceofwilmington.com/wp-content/uploads/2024/02/cropped-port-city-fence-logo.webp",
+      "og:image:width": "512",
+      "og:image:height": "512",
+      "og:image:type": "image/webp"
+    },
+    "twitter": {
+      "twitter:card": "summary_large_image"
+    }
+  }
+}

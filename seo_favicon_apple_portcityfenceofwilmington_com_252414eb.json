@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "favicon_found": true,
+    "apple_icons_count": 1
+  },
+  "details": [],
+  "evidence": {
+    "favicon": "https://i0.wp.com/portcityfenceofwilmington.com/wp-content/uploads/2024/02/port-city-fence-logo.webp?fit=192%2C96&ssl=1",
+    "apple_touch_icons": [
+      "https://i0.wp.com/portcityfenceofwilmington.com/wp-content/uploads/2024/02/port-city-fence-logo.webp?fit=180%2C90&ssl=1"
+    ]
+  }
+}

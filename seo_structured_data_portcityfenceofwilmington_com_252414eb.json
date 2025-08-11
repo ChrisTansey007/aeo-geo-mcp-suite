@@ -1,0 +1,118 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "structured_data_count": 1
+  },
+  "details": [],
+  "evidence": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://portcityfenceofwilmington.com/",
+          "url": "https://portcityfenceofwilmington.com/",
+          "name": "Fence Company Wilmington NC",
+          "isPartOf": {
+            "@id": "https://portcityfenceofwilmington.com/#website"
+          },
+          "about": {
+            "@id": "https://portcityfenceofwilmington.com/#organization"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://portcityfenceofwilmington.com/#primaryimage"
+          },
+          "image": {
+            "@id": "https://portcityfenceofwilmington.com/#primaryimage"
+          },
+          "thumbnailUrl": "https://portcityfenceofwilmington.com/wp-content/uploads/2025/07/hero-pic_800w-1.webp",
+          "datePublished": "2024-02-12T12:55:07+00:00",
+          "dateModified": "2025-07-07T15:35:47+00:00",
+          "description": "Family-owned fence company serving Wilmington, NC. Wood, vinyl & aluminum installs—free on-site estimates. Call today!",
+          "breadcrumb": {
+            "@id": "https://portcityfenceofwilmington.com/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://portcityfenceofwilmington.com/"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://portcityfenceofwilmington.com/#primaryimage",
+          "url": "https://i0.wp.com/portcityfenceofwilmington.com/wp-content/uploads/2025/07/hero-pic_800w-1.webp?fit=800%2C427&ssl=1",
+          "contentUrl": "https://i0.wp.com/portcityfenceofwilmington.com/wp-content/uploads/2025/07/hero-pic_800w-1.webp?fit=800%2C427&ssl=1",
+          "width": 800,
+          "height": 427
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://portcityfenceofwilmington.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://portcityfenceofwilmington.com/#website",
+          "url": "https://portcityfenceofwilmington.com/",
+          "name": "Port City Fence | Quality Fencing in Wilmington, NC",
+          "description": "Port City Fence—family-owned fence company serving Wilmington, NC. Wood, vinyl &amp; aluminum fences, plus free on-site estimates!",
+          "publisher": {
+            "@id": "https://portcityfenceofwilmington.com/#organization"
+          },
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://portcityfenceofwilmington.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://portcityfenceofwilmington.com/#organization",
+          "name": "Port City Fence | Quality Fencing in Wilmington, NC",
+          "url": "https://portcityfenceofwilmington.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://portcityfenceofwilmington.com/#/schema/logo/image/",
+            "url": "https://i0.wp.com/portcityfenceofwilmington.com/wp-content/uploads/2024/02/port-city-fence-logo.webp?fit=400%2C199&ssl=1",
+            "contentUrl": "https://i0.wp.com/portcityfenceofwilmington.com/wp-content/uploads/2024/02/port-city-fence-logo.webp?fit=400%2C199&ssl=1",
+            "width": 400,
+            "height": 199,
+            "caption": "Port City Fence | Quality Fencing in Wilmington, NC"
+          },
+          "image": {
+            "@id": "https://portcityfenceofwilmington.com/#/schema/logo/image/"
+          },
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61569862002628&sk=about"
+          ]
+        }
+      ]
+    }
+  ]
+}

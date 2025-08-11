@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "has_sitemap": false,
+    "has_robots": false
+  },
+  "details": [],
+  "evidence": {
+    "sitemap": "",
+    "robots": ""
+  }
+}

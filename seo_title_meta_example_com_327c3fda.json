@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "title_length": 14,
+    "meta_count": 2
+  },
+  "details": [],
+  "evidence": {
+    "title": "Example Domain",
+    "meta": {
+      "": "text/html; charset=utf-8",
+      "viewport": "width=device-width, initial-scale=1"
+    }
+  }
+}

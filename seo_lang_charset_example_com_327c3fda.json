@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "lang_found": false,
+    "charset": "utf-8"
+  },
+  "details": [],
+  "evidence": {
+    "lang": "",
+    "charset": "utf-8"
+  }
+}

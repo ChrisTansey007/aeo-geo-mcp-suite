@@ -1,0 +1,56 @@
+{
+  "summary": {
+    "score": 100,
+    "grade": "A"
+  },
+  "metrics": {
+    "wordcount": 2578,
+    "keywords_count": 10
+  },
+  "details": [],
+  "evidence": {
+    "wordcount": 2578,
+    "keywords": [
+      [
+        "fence",
+        127
+      ],
+      [
+        "and",
+        67
+      ],
+      [
+        "the",
+        67
+      ],
+      [
+        "to",
+        58
+      ],
+      [
+        "for",
+        54
+      ],
+      [
+        "a",
+        53
+      ],
+      [
+        "our",
+        49
+      ],
+      [
+        "guide",
+        43
+      ],
+      [
+        "your",
+        39
+      ],
+      [
+        "regulations",
+        36
+      ]
+    ]
+  }
+}
