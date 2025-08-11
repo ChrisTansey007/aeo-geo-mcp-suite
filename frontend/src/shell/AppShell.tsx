@@ -43,6 +43,7 @@ export default function AppShell() {
           <Link className="block hover:underline" to="/">Dashboard</Link>
           <Link className="block hover:underline" to="/history">History</Link>
           <Link className="block hover:underline" to="/settings">Settings</Link>
+          <Link className="block hover:underline" to="/logs">Logs</Link>
         </nav>
       </aside>
       <header className="flex items-center gap-2 px-4 border-b border-neutral-800">
