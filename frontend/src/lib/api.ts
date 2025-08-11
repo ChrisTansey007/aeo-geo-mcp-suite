@@ -2,6 +2,7 @@
 import type { Run, RunMeta, ToolResult } from '../shared/types';
 
 const BASE = import.meta.env.VITE_API_BASE ?? '';
+export const LOGS_MOCK = import.meta.env.VITE_LOGS_MOCK === '1';
 
 // Simple frontend logger
 function logFrontend(message: string) {
@@ -17,6 +18,106 @@ function logFrontend(message: string) {
   } catch {
     // ignore logging errors
   }
+}
+
+// ----------------- Logs API helpers -----------------
+export interface LogsParams {
+  source: string;
+  level?: string;
+  q?: string;
+  limit?: number;
+  after?: string;
+  signal?: AbortSignal;
+}
+
+function buildLogsUrl(path: string, params: LogsParams) {
+  const search = new URLSearchParams();
+  search.set('source', params.source);
+  if (params.level) search.set('level', params.level);
+  if (params.q) search.set('q', params.q);
+  if (params.limit) search.set('limit', String(params.limit));
+  if (params.after) search.set('after', params.after);
+  return `${BASE}${path}?${search.toString()}`;
+}
+
+export async function getLogs(params: LogsParams) {
+  const url = buildLogsUrl('/logs', params);
+  try {
+    const res = await fetch(url, { signal: params.signal });
+    if (!res.ok) throw new Error('logs failed');
+    return res.json();
+  } catch (err) {
+    if (LOGS_MOCK) return mockLogs(params);
+    throw err;
+  }
+}
+
+export function getLogsStream(source: string): EventSource {
+  try {
+    return new EventSource(buildLogsUrl('/logs/stream', { source } as LogsParams));
+  } catch (err) {
+    if (LOGS_MOCK) return mockLogsStream();
+    throw err;
+  }
+}
+
+export async function downloadLogs(params: LogsParams) {
+  const url = buildLogsUrl('/logs/download', params);
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('download failed');
+    return res.blob();
+  } catch (err) {
+    if (LOGS_MOCK) {
+      const blob = new Blob([JSON.stringify(await mockLogs(params))], {
+        type: 'application/json',
+      });
+      return blob;
+    }
+    throw err;
+  }
+}
+
+// Basic mock provider for when API endpoints are missing
+async function mockLogs(params: LogsParams) {
+  const count = params.limit ?? 20;
+  const now = Date.now();
+  const logs = Array.from({ length: count }, (_, i) => ({
+    id: `${params.source}-${now - i}`,
+    ts: now - i * 1000,
+    level: 'info',
+    message: `mock ${params.source} log ${i}`,
+  }));
+  return { logs };
+}
+
+function mockLogsStream(): EventSource {
+  const target = new EventTarget();
+  const interval = setInterval(() => {
+    const data = {
+      id: String(Date.now()),
+      ts: Date.now(),
+      level: 'info',
+      message: 'mock stream log',
+    };
+    const event = new MessageEvent('message', { data: JSON.stringify(data) });
+    target.dispatchEvent(event);
+    (target as any).onmessage?.(event);
+  }, 1000);
+  return {
+    close() {
+      clearInterval(interval);
+    },
+    addEventListener: target.addEventListener.bind(target),
+    removeEventListener: target.removeEventListener.bind(target),
+    dispatchEvent: target.dispatchEvent.bind(target),
+    onmessage: null,
+    onerror: null,
+    onopen: null,
+    readyState: 0,
+    url: '',
+    withCredentials: false,
+  } as unknown as EventSource;
 }
 
 export async function route(url: string, engines?: string[]) {

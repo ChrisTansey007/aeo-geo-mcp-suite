@@ -10,6 +10,7 @@ import RunDetail from './pages/RunDetail';
 import History from './pages/History';
 import Settings from './pages/Settings';
 import Chat from './pages/Chat';
+import { LogsPanel } from './panels';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
   { path: 'runs/:id', element: <RunDetail /> },
   { path: 'history', element: <History /> },
   { path: 'chat', element: <Chat /> },
-  { path: 'settings', element: <Settings /> }
+  { path: 'settings', element: <Settings /> },
+  { path: 'logs', element: <LogsPanel /> }
     ]
   }
 ]);

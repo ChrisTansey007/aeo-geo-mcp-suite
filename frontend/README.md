@@ -1,5 +1,15 @@
 # React + TypeScript + Vite
 
+## Logs Panel
+
+The application exposes a logs viewer under `/logs` which allows toggling between
+backend and frontend streams. Filters (level, search, time window) and scroll
+positions are preserved per tab. The view supports live tailing, pausing, and
+downloading the currently displayed logs.
+
+When backend log endpoints are unavailable, enable the mock provider by setting
+the environment variable `VITE_LOGS_MOCK=1` before running the dev server.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
